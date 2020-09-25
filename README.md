@@ -33,7 +33,7 @@ Real-time demo:
 
 e.g.
 
-> python3 image_emotion_gender_demo.py ../images/test_image.jpg
+> python3 image_emotion_gender_demo.py ./images/test_image.jpg
 
 ### Running with Docker
 

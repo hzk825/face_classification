@@ -70,11 +70,11 @@ def modify_backprop(model, name, task):
 
         # re-instanciate a new model
         if task == 'gender':
-            model_path = '../trained_models/gender_models/gender_mini_XCEPTION.21-0.95.hdf5'
+            model_path = './trained_models/gender_models/gender_mini_XCEPTION.21-0.95.hdf5'
         elif task == 'emotion':
-            model_path = '../trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
-            # model_path = '../trained_models/fer2013_mini_XCEPTION.119-0.65.hdf5'
-            # model_path = '../trained_models/fer2013_big_XCEPTION.54-0.66.hdf5'
+            model_path = './trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
+            # model_path = './trained_models/fer2013_mini_XCEPTION.119-0.65.hdf5'
+            # model_path = './trained_models/fer2013_big_XCEPTION.54-0.66.hdf5'
         new_model = load_model(model_path, compile=False)
     return new_model
 
@@ -171,7 +171,7 @@ if __name__ == '__main__':
     import pickle
     faces = pickle.load(open('faces.pkl', 'rb'))
     face = faces[0]
-    model_filename = '../../trained_models/emotion_models/mini_XCEPTION.523-0.65.hdf5'
+    model_filename = './trained_models/emotion_models/mini_XCEPTION.523-0.65.hdf5'
     # reset_optimizer_weights(model_filename)
     model = load_model(model_filename)
 

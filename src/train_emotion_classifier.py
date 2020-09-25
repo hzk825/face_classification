@@ -23,7 +23,7 @@ validation_split = .2
 verbose = 1
 num_classes = 7
 patience = 50
-base_path = '../trained_models/emotion_models/'
+base_path = './trained_models/emotion_models/'
 
 # data generator
 data_generator = ImageDataGenerator(
@@ -52,7 +52,7 @@ for dataset_name in datasets:
     early_stop = EarlyStopping('val_loss', patience=patience)
     reduce_lr = ReduceLROnPlateau('val_loss', factor=0.1,
                                   patience=int(patience/4), verbose=1)
-    trained_models_path = base_path + dataset_name + '_mini_XCEPTION'
+    trained_models_path = base_path + dataset_name + '_mini_XCEPTION_1'
     model_names = trained_models_path + '.{epoch:02d}-{val_acc:.2f}.hdf5'
     model_checkpoint = ModelCheckpoint(model_names, 'val_loss', verbose=1,
                                                     save_best_only=True)

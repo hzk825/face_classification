@@ -25,17 +25,17 @@ task = 'emotion'
 if task == 'emotion':
     labels = get_labels('fer2013')
     offsets = (0, 0)
-    # model_filename = '../trained_models/fer2013_big_XCEPTION.54-0.66.hdf5'
-    model_filename = '../trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
+    # model_filename = './trained_models/fer2013_big_XCEPTION.54-0.66.hdf5'
+    model_filename = './trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
 elif task == 'gender':
     labels = get_labels('imdb')
     offsets = (30, 60)
-    model_filename = '../trained_models/gender_models/gender_mini_XCEPTION.21-0.95.hdf5'
+    model_filename = './trained_models/gender_models/gender_mini_XCEPTION.21-0.95.hdf5'
 
 color = (0, 255, 0)
 
 # loading models
-detection_model_path = '../trained_models/detection_models/haarcascade_frontalface_default.xml'
+detection_model_path = './trained_models/detection_models/haarcascade_frontalface_default.xml'
 model = load_model(model_filename, compile=False)
 target_size = model.input_shape[1:3]
 face_detection = load_detection_model(detection_model_path)
@@ -82,4 +82,4 @@ for face_coordinates in faces:
     rgb_image[y1:y2, x1:x2, :] = rgb_guided_gradCAM
     draw_bounding_box((x1, y1, x2 - x1, y2 - y1), rgb_image, color)
 bgr_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2BGR)
-cv2.imwrite('../images/guided_gradCAM.png', bgr_image)
+cv2.imwrite('./images/guided_gradCAM.png', bgr_image)

@@ -133,7 +133,7 @@ if __name__ == '__main__':
     import pickle
 
     # dataset_name = 'fer2013'
-    # model_path = '../trained_models/emotion_models/simple_CNN.985-0.66.hdf5'
+    # model_path = './trained_models/emotion_models/simple_CNN.985-0.66.hdf5'
     dataset_name = 'fer2013'
     class_decoder = get_labels(dataset_name)
     # data_manager = DataManager(dataset_name)
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     plt.show()
 
     """
-    model = load_model('../trained_models/emotion_models/simple_CNN.985-0.66.hdf5')
+    model = load_model('./trained_models/emotion_models/simple_CNN.985-0.66.hdf5')
     conv1_weights = model.layers[2].get_weights()
     kernel_conv1_weights = conv1_weights[0]
     kernel_conv1_weights = np.squeeze(kernel_conv1_weights)

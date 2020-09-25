@@ -18,11 +18,11 @@ class DataManager(object):
         if self.dataset_path is not None:
             self.dataset_path = dataset_path
         elif self.dataset_name == 'imdb':
-            self.dataset_path = '../datasets/imdb_crop/imdb.mat'
+            self.dataset_path = './datasets/imdb_crop/imdb.mat'
         elif self.dataset_name == 'fer2013':
-            self.dataset_path = '../datasets/fer2013/fer2013.csv'
+            self.dataset_path = './datasets/fer2013/fer2013.csv'
         elif self.dataset_name == 'KDEF':
-            self.dataset_path = '../datasets/KDEF/'
+            self.dataset_path = './datasets/KDEF/'
         else:
             raise Exception(
                     'Incorrect dataset name, please input imdb or fer2013')

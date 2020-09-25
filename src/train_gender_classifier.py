@@ -24,9 +24,9 @@ dataset_name = 'imdb'
 input_shape = (64, 64, 1)
 if input_shape[2] == 1:
     grayscale = True
-images_path = '../datasets/imdb_crop/'
-log_file_path = '../trained_models/gender_models/gender_training.log'
-trained_models_path = '../trained_models/gender_models/gender_mini_XCEPTION'
+images_path = './datasets/imdb_crop/'
+log_file_path = './trained_models/gender_models/gender_training.log'
+trained_models_path = './trained_models/gender_models/gender_mini_XCEPTION'
 
 # data loader
 data_loader = DataManager(dataset_name)
